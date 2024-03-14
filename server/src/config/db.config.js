@@ -1,2 +1,5 @@
-export const DB_URL = 
-process.env.DB_URL || "mongodb+srv://jessecrowe:atlaspassword@cluster0.d69ksvd.mongodb.net/capstone-db?retryWrites=true&w=majority&appName=Cluster0";
+// export default{ 
+//     DB_URL: process.env.DB_URL || "mongodb+srv://jaimenickels:jaimenickels@cluster0.unnvhti.mongodb.net/thatsanotherstory?retryWrites=true&w=majority",
+//     jwtSecret: process.env.JWT_SECRET || " ",
+//     jwtTTL: "7d",
+// }
