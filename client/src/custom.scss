@@ -1,15 +1,15 @@
 // Override default variables before the import
-$primary: #fcc44c;
-$secondary: #94cdbd;
-$info: #0e2039;
-$danger: #dc3545;
+$primary: #fefb9d;
+$secondary: #15420cd2;
+$info: #ba8126;
+$danger: #0d0708;
 $warning: #fcc44c;
-$header: #183054;
+$header: #b09d24;
 $stone: #999999;
-$body-bg: #183054;
-$body-color: #ffffff;
-$font-family-base: "Raleway", sans-serif;
-$decoration: #2c85fb;
+$body-bg: #f8a623;;
+$body-color: #730484;
+$font-family-base: "Poppins","Raleway", sans-serif;
+$decoration: #0461dc;
 $link-color: $secondary;
 $link-hover-color: $primary;
 $card-border-color: $decoration;
@@ -31,6 +31,7 @@ $theme-colors: (
 .card {
   --bs-card-border-color: #{$card-border-color};
 }
+
 
 // Import Bootstrap and its default variables
 @import "bootstrap/scss/bootstrap.scss";

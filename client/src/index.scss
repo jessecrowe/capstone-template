@@ -11,16 +11,26 @@ a {
 }
 
 html {
+  // Custom CSS
+h1, h2 {
+  font-weight: bold;
+  font-style: italic;
+}
+
+h1 {
+  white-space: nowrap; // Ensures the heading stays on one line
+}
+
   overflow: hidden;
 }
 
 body {
-  background: linear-gradient(#0e2039, #183054) no-repeat;
+  background: linear-gradient#6e1c66 #202935 no-repeat;
   background-attachment: fixed;
 }
 
 .bg-info {
-  background-color: #183054;
+  background-color: #b5007c;
 }
 
 textarea {

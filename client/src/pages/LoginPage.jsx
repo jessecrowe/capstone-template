@@ -37,7 +37,8 @@ return(
                 style={{width: "350px"}}
                 onSubmit={handleSignin}
                 >
-                    <h3 className="mb=3">Login</h3>
+                    <h4 className="mb=3"><b><i>Thats Another Story!</i></b></h4>
+                    <h3>Login page</h3>
                     <Form.Group controlId="username-login">
                         <Form.Label>Username</Form.Label>
                         <InputGroup>
@@ -58,6 +59,7 @@ return(
                         <Form.Control
                         type="text"
                         name="password"
+                        placeholder="Password"
                         required
                         id="Login"
                         value={data.password}
@@ -80,13 +82,13 @@ return(
                     )}
                     <Row className="mr-0">
                         <Col>
-                        New User?
+                        Upload Profile 
                         <Button
                         as="a"
                         variant="link"
                         onClick={()=> navigate("/register")}
                         >
-                            Register
+                           UploadPic
                             </Button> 
                         </Col>
                         <Button type="submit"disabled={data.isSubmitting}>
