@@ -1,13 +1,11 @@
-import { hash } from "bcryptjs";
-import {
-    handleGetUserByUserName,
-    createUser,
-    sanitizeUser,
-} from "../services/auth.services";
+import {hash} from '../utils/auth.utils'
+import 
+    {handleGetUserByUserName, createUser, sanitizeUser} from "../services/auth.services";
 import { comparPassword } from "../utils/auth.utils";
 
 
 export async function handleSignUp(req, res) {
+    console.log("hi")
     const {
         firstName,
         lastName,
@@ -23,32 +21,36 @@ export async function handleSignUp(req, res) {
         profileImg,
         favGenres,
     } = req.body;
+    try{
 
-    let user = await handleGetUserByUserName(userName);
-    if (user) {
-        return res.status(422).json({ userName: "Username taken" });
+        let user = await handleGetUserByUserName(userName);
+        if (user) {
+            return res.status(422).json({ userName: "Username taken" });
+        }
+        const passwordHash = hash(password);
+        user = await createUser(
+            firstName,
+            lastName,
+            email,
+            userName,
+            passwordHash,
+            streetNum,
+            streetName,
+            city,
+            state,
+            zipCode,
+            profileImg,
+            favGenres,
+            role
+        )
+        user = sanitizeUser(user);
+        
+        console.log(user)
+        res.status(201).json(user); 
     }
-
-    const passwordHash = hash(password);
-
-    user = await createUser(
-        firstName,
-        lastName,
-        email,
-        userName,
-        passwordHash,
-        streetNum,
-        streetName,
-        city,
-        state,
-        zipCode,
-        profileImg,
-        favGenres,
-        role
-    );
-    user = sanitizeUser(user);
-
-    res.status(201).json(user);
+    catch(err){
+        console.log(err)
+    }
 }
 
 export async function handleSignIn(req, res) {
@@ -61,7 +63,17 @@ export async function handleSignIn(req, res) {
     }
     user = sanitizeUser(user);
 
-    const accessToken = "";
+    const token = Jwt.sign(userForToken, keys.jwt.secret)
 
-    res.status;(200).json({user, accessToken})
+    const userForToken = {
+        userName: user.userName,
+        id: user._id,
+     }
+    res
+        .status(200)
+        .send({ token, userName, uid: user.id, profileimg })
+
+    // const accessToken = "";
+
+    // res.status;(200).json({user, accessToken})
 }

@@ -1,5 +1,5 @@
 // import { Router } from "express";
-// import { createNewUser } from "../controllers/user.controllers";
+// import { handleSignUp } from "../controllers/auth.controllers";
 
 
 // //Router URL: /api/users
@@ -12,6 +12,6 @@
 // userRoutes
 //     .route("/signup")
 //         //Post /api/users - Creates a new user in the DB
-//         .post(createNewUser)
+//         .post(handleSignUp)
 
 // export default userRoutes;

@@ -1,5 +1,5 @@
-import User from "../models/user.model";
-import  Jwt  from "jsonwebtoken";
+// import User from "../models/user.model";
+// import  Jwt  from "jsonwebtoken";
 
 
 // export async function handleSignIn(req, res){
@@ -25,7 +25,7 @@ import  Jwt  from "jsonwebtoken";
 //         id: user._id,
 //     }
 
-//     const token = jwt.sign(userForToken, keys.jwt.secret)
+//     const token = Jwt.sign(userForToken, keys.jwt.secret)
 //     res
 //         .status(200)
 //         .send({ token, userName, uid: user.id, profileimg })
