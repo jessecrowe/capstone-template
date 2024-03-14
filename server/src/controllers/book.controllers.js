@@ -21,7 +21,7 @@ export async function handleCreateBook(req, res){
 
 export async function handleFindingBook (req, res) {
     const allBooks = await Book.find();
-    return allBooks;
+    return res.status(200).json(allBooks);
 }
 
 export async function handleFindingByAuthor(req, res){
