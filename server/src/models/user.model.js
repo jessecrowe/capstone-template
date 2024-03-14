@@ -14,7 +14,6 @@ const userSchema = new Schema(
       type: String,
       required: [true, "To create an account you must include your last name."],
     },
-
     email: {
       type: String,
       required: [true, "Email Required"],
