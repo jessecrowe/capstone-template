@@ -4,7 +4,7 @@ import { handleSignIn, handleSignUp } from "../controllers/auth.controllers";
 
 const authRouter = Router()
 authRouter
-    .post("/signup", handleSignUp, ()=>console.log("hi"))
+    .post("/signup", handleSignUp)
     .post("/signin", handleSignIn)
 
 export default authRouter;
