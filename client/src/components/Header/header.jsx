@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Nav, Container} from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "./header.css"
 
 function Header() {
 	return (
@@ -8,12 +9,14 @@ function Header() {
 		<Navbar style={{ backgroundColor: "lightgray" }}  >
 		<Container>
 
-			<Navbar.Brand href="#home">
+			<Navbar.Brand className="nav-brand" as={Link} to="/">
 				That's Another Story
 			</Navbar.Brand>
-			<Nav className="justify-content-end">
-				<Nav.Link href="#CommunityPage" >Public Bookshelf</Nav.Link>
-				<Nav.Link  href="#login">Login</Nav.Link>
+			<Navbar.Toggle aria-controls="top-nav" />
+			<Navbar.Collapse id="top-nav"></Navbar.Collapse>
+			<Nav className="ms-auto nav-links">
+				<Nav.Link as={Link} to="/communitypage" >Public Bookshelf</Nav.Link>
+				<Nav.Link as={Link} to="/" >Login</Nav.Link>
 			</Nav>
 			
 

@@ -1,5 +1,7 @@
 // import { query } from 'express';
 import React, { useState } from 'react'
+import "./communitypage.css"
+
 
 // const search = ({ searchBooks })
 //     const [bookList, setBookList] = useState('');
@@ -9,9 +11,11 @@ import React, { useState } from 'react'
 // }
 
 function CommunityPage() {
+  
+
   return (
-    <>
-        <h2 color='yellow'>Books Available</h2>
+    <div className='community-page'  >
+        <h2 className='availableBooks' >Books Available</h2>
         <input  type='text' id='bookSearch' placeholder='Search Books' title='type in a book' style={{float: 'right'}}></input>
         {/* <div>
             <input
@@ -23,7 +27,7 @@ function CommunityPage() {
             <button onClick={handleSearch}>Search</button>
         </div> */}
         
-    </>
+    </div>
   )
 }
 

@@ -1,7 +1,7 @@
 import './App.css'
-import Header from './components/Header/header'
-import { Router } from 'react-router-dom'
-import CommunityPage from './pages/CommunityPage/CommunityPage'
+import { Header } from './components';
+import { Route, Router, Routes } from 'react-router-dom';
+import CommunityPage from './pages/CommunityPage/CommunityPage';
 
 
 
@@ -15,7 +15,10 @@ function App() {
     <div>
 
       <Header />
-      <CommunityPage />
+      <Routes>
+      
+        <Route path="/communitypage" element={<CommunityPage />} />
+      </Routes>
    
     </div>
    
