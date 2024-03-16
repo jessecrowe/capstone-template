@@ -1,9 +1,28 @@
-import "./App.css";
+import './App.css'
+import { Header } from './components';
+import { Route, Router, Routes } from 'react-router-dom';
+import CommunityPage from './pages/CommunityPage/CommunityPage';
+
+
+
 
 function App() {
+  
+
   return (
     <>
-      <h1>That's Another Story:</h1>
+   
+    <div>
+
+      <Header />
+      <Routes>
+      
+        <Route path="/communitypage" element={<CommunityPage />} />
+      </Routes>
+   
+    </div>
+   
+     
     </>
   );
 }
