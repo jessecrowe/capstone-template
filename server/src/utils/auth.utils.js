@@ -1,7 +1,6 @@
 import bcrypt from "bcryptjs"
 
 export function hash (password){
-    console.log(hello)
     return bcrypt.hashSync(password, 12)
 };
 
