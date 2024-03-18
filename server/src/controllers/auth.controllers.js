@@ -3,11 +3,10 @@ import {
   handleGetUserByUserName,
   createUser,
   sanitizeUser,
-} from "../services/auth.services";
+} from "../services/userAuth.services";
 import { comparPassword } from "../utils/auth.utils";
 
 export async function handleSignUp(req, res) {
-  console.log("hi");
   const {
     firstName,
     lastName,
@@ -42,7 +41,6 @@ export async function handleSignUp(req, res) {
       zipCode,
       profileImg,
       favGenres,
-      role
     );
     user = sanitizeUser(user);
     console.log(user);
