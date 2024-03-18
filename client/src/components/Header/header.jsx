@@ -9,14 +9,15 @@ function Header() {
 		<Navbar style={{ backgroundColor: "lightgray" }}  >
 		<Container>
 
-			<Navbar.Brand className="nav-brand" as={Link} to="/">
+			<Navbar.Brand className="nav-brand" as={Link} to="/welcomepage">
 				That's Another Story
 			</Navbar.Brand>
 			<Navbar.Toggle aria-controls="top-nav" />
 			<Navbar.Collapse id="top-nav"></Navbar.Collapse>
 			<Nav className="ms-auto nav-links">
 				<Nav.Link as={Link} to="/communitypage" >Public Bookshelf</Nav.Link>
-				<Nav.Link as={Link} to="/" >Login</Nav.Link>
+				<Nav.Link as={Link} to="/welcomepage" >Login</Nav.Link>
+				<Nav.Link as={Link} to="/signup">Sign Up</Nav.Link>
 			</Nav>
 			
 

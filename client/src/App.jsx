@@ -1,7 +1,9 @@
 import './App.css'
 import { Header } from './components';
 import { Route, Router, Routes } from 'react-router-dom';
-import CommunityPage from './pages/CommunityPage/CommunityPage';
+import { CommunityPage } from './pages';
+import { SignUpPage } from './pages';
+import { WelcomePage } from './pages';
 
 
 
@@ -16,7 +18,8 @@ function App() {
 
       <Header />
       <Routes>
-      
+        <Route path='/welcomepage' element={<WelcomePage />} />
+        <Route path='/signup' element={<SignUpPage />} />
         <Route path="/communitypage" element={<CommunityPage />} />
       </Routes>
    
