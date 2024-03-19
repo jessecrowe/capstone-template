@@ -7,8 +7,10 @@ import { signIn, signUp } from "../../services/auth.services";
 const useAuth = () => {
   const { state, dispatch } = useContext(authContext);
 
-  const handleSignUp = async (username, password, confirmPassword) => {
-  const response = await signUp (username, password, confirmPassword);
+  const handleSignUp = async (username, password, confirmPassword, firstName, lastName, email,
+    streetName, streetNum, city, state, zipCode, favGenres) => {
+  const response = await signUp (username, password, confirmPassword,  firstName, lastName, email,
+    streetName, streetNum, city, state, zipCode, favGenres);
   console.log(response)
   await signIn(username, password)
   };
@@ -23,6 +25,7 @@ const useAuth = () => {
   };
 
   return {
+    ...state,
     handleSignIn,
     handleSignOut,
     handleSignUp,
