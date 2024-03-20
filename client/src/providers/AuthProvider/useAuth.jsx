@@ -9,10 +9,15 @@ const useAuth = () => {
 
   const handleSignUp = async (username, password, confirmPassword, firstName, lastName, email,
     streetName, streetNum, city, state, zipCode, favGenres) => {
-  const response = await signUp (username, password, confirmPassword,  firstName, lastName, email,
-    streetName, streetNum, city, state, zipCode, favGenres);
-  console.log(response)
-  await signIn(username, password)
+      try {
+      const response = await signUp (username, password, confirmPassword,  firstName, lastName, email,
+        streetName, streetNum, city, state, zipCode, favGenres);
+        console.log(response)
+        
+    } catch (error) {
+      console.log(error)
+    }
+  // await signIn(username, password)
   };
 
   const handleSignIn = async (username, password) => {

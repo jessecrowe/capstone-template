@@ -18,7 +18,7 @@ function App() {
 
       <Header />
       <Routes>
-        <Route path='/welcomepage' element={<WelcomePage />} />
+        <Route path='/' element={<WelcomePage />} />
         <Route path='/signup' element={<SignUpPage />} />
         <Route path="/communitypage" element={<CommunityPage />} />
       </Routes>
