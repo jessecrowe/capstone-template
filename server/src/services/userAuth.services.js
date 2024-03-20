@@ -3,6 +3,7 @@ import User from "../models/user.model";
 export async function handleGetUserByUserName(userName) {
   return await User.findOne({ userName });
 }
+
 export async function createUser(
   firstName,
   lastName,
