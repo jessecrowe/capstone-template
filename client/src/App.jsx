@@ -4,15 +4,25 @@ import { Route, Router, Routes } from 'react-router-dom';
 import CommunityPage from './pages/CommunityPage/CommunityPage';
 
 
+
+
 function App() {
+  
+
   return (
     <>
+   
     <div>
+
       <Header />
       <Routes>
-        <Route path="/" element={<CommunityPage />} />
+      
+        <Route path="/communitypage" element={<CommunityPage />} />
       </Routes>
+   
     </div>
+   
+     
     </>
   );
 }
