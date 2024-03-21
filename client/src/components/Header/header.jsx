@@ -17,6 +17,7 @@ function Header() {
 			<Nav className="ms-auto nav-links">
 				<Nav.Link as={Link} to="/communitypage" >Public Bookshelf</Nav.Link>
 				<Nav.Link as={Link} to="/" >Login</Nav.Link>
+				<Nav.Link as={Link} to="/signup">Sign Up</Nav.Link>
 			</Nav>
 			
 
