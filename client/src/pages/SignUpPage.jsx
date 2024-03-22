@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../providers/AuthProvider/useAuth";
 
 const initialState = {
@@ -22,15 +22,24 @@ function SignUpPage() {
   const [formData, setFormData] = useState(initialState)
   const [errors, setErrors] = useState(initialState);
   const { handleSignUp } = useAuth();
+  const navigate = useNavigate();
+  const isAuthenticated = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const { userName, password, confirmPassword, firstName, lastName, email,
       streetName, streetNum, city, state, zipCode, favGenres } = formData;
-
-    await handleSignUp(userName, password, confirmPassword, firstName, lastName, email,
-      streetName, streetNum, city, state, zipCode, favGenres)
+    
+    try {
+      await handleSignUp(userName, password, confirmPassword, firstName, lastName, email,
+        streetName, streetNum, city, state, zipCode, favGenres)
+      navigate('/communitypage') 
+        
+      
+    } catch (error) {
+      console.error('Sign Up failed', error)
+    }
   }
 
   const handleInputChange = (e) => setFormData({ ...formData, [e.target.name]:e.target.value })

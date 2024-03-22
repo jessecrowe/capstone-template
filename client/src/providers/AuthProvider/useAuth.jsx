@@ -1,32 +1,33 @@
 import { useContext } from "react"
 import authContext from "./authContext"
-import { SIGNIN, SIGNOUT } from "."
+import { SIGNIN, SIGNOUT } from "./useAuthProvider";
 import { signIn, signUp } from "../../services/auth.services";
+import { setAccessToken } from "../../utils/api.utils";
 
 
 const useAuth = () => {
   const { state, dispatch } = useContext(authContext);
 
-  const handleSignUp = async (username, password, confirmPassword, firstName, lastName, email,
+  const handleSignUp = async (userName, password, confirmPassword, firstName, lastName, email,
     streetName, streetNum, city, state, zipCode, favGenres) => {
-      try {
-      const response = await signUp (username, password, confirmPassword,  firstName, lastName, email,
+     await signUp (userName, password, confirmPassword,  firstName, lastName, email,
         streetName, streetNum, city, state, zipCode, favGenres);
-        console.log(response)
-        
-    } catch (error) {
-      console.log(error)
-    }
-  // await signIn(username, password)
+        // console.log(response)
+   await handleSignIn(userName, password)
   };
 
-  const handleSignIn = async (username, password) => {
-   return signIn(username, password).then((response) =>
-    console.log(response))
+  const handleSignIn = async (userName, password) => {
+   signIn(userName, password).then((response) => {
+    dispatch({ type: SIGNIN, payload: response.data.user})
+    setAccessToken(response.data.accessToken)
+    const localAuth = { ...response.data};
+    localStorage.setItem('test-auth', JSON.stringify(localAuth))
+   })
   }
     
   const handleSignOut = () => {
     dispatch({ type: SIGNOUT})
+    localStorage.removeItem('test-auth')
   };
 
   return {

@@ -1,38 +1,10 @@
 import { useReducer } from "react";
 import authContext from "./authContext";
+import useAuthProvider from "./useAuthProvider";
 
-
-const initialState = {
-  user: null, 
-  isAuthenticated: null,
-}
-
-export const SIGNIN = "SIGNIN";
-export const SIGNOUT = "SIGNOUT";
-
-const reducer = (state, action) => {
-  switch(action.type) {
-    case SIGNIN: {
-      return {
-        ...state, 
-        user: action.payload,
-        isAuthenticated: true,
-      }
-    }
-    case SIGNOUT: 
-    return {
-      ...state, 
-      user: null, 
-      isAuthenticated: false,
-    }
-    default: {
-      return state;
-    }
-  }
-};
 
 const AuthProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const {state, dispatch } = useAuthProvider();
   return (
   <authContext.Provider value={{ state, dispatch }}>
     {children}

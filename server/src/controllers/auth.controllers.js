@@ -1,4 +1,4 @@
-import { hash } from "../utils/auth.utils";
+import { hash, signJwt } from "../utils/auth.utils";
 import {
   handleGetUserByUserName,
   createUser,
@@ -59,10 +59,9 @@ export async function handleSignIn(req, res) {
   if (!user || !comparPassword(password, user.passwordHash)) {
     return res.status(422).json({ error: "Invalid Username/password" });
   }
+  
+  const accessToken = signJwt(user)
   user = sanitizeUser(user);
-
-  const accessToken = "";
-
-  res.status;
-  (200).json({ user, accessToken });
+  
+  res.status(200).json({ user, accessToken });
 }

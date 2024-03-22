@@ -38,4 +38,5 @@ export async function createUser(
 export function sanitizeUser(user) {
   user = user.toJSON();
   delete user.passwordHash;
+  return user
 };
