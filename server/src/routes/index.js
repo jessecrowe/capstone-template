@@ -5,6 +5,6 @@ import authRouter from "./auth.routes";
 const router = Router();
 
 router.use("/auth", authRouter)
-router.use("/communitypage", bookRoutes);
+router.use("/books", bookRoutes);
 
 export default router;

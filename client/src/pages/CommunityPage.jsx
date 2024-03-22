@@ -1,6 +1,6 @@
 // import { query } from 'express';
-import React, { useState } from "react";
-import Book from "../../../server/src/models/book.model";
+import React from "react";
+import Books from "../components/books";
 
 // const search = ({ searchBooks })
 //     const [bookList, setBookList] = useState('');
@@ -19,8 +19,10 @@ function CommunityPage() {
         placeholder="Search Books"
         title="type in a book"
         style={{ float: "right" }}
-      ></input>
-
+      ></input> 
+      <div>
+      <Books/>
+      </div>
       {/* <div>
             <input
             type='text'
