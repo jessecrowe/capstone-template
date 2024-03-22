@@ -1,7 +1,6 @@
 // import { query } from 'express';
-import React, { useState } from 'react'
-
-
+import React, { useState } from "react";
+import Book from "../../../server/src/models/book.model";
 
 // const search = ({ searchBooks })
 //     const [bookList, setBookList] = useState('');
@@ -11,13 +10,18 @@ import React, { useState } from 'react'
 // }
 
 function CommunityPage() {
-  
-
   return (
-    <div className='community-page'  >
-        <h2 className='availableBooks' >Books Available</h2>
-        <input  type='text' id='bookSearch' placeholder='Search Books' title='type in a book' style={{float: 'right'}}></input>
-        {/* <div>
+    <div className="community-page">
+      <h2 className="availableBooks">Books Available</h2>
+      <input
+        type="text"
+        id="bookSearch"
+        placeholder="Search Books"
+        title="type in a book"
+        style={{ float: "right" }}
+      ></input>
+
+      {/* <div>
             <input
             type='text'
             placeholder='Search Books'
@@ -26,9 +30,8 @@ function CommunityPage() {
             />
             <button onClick={handleSearch}>Search</button>
         </div> */}
-        
     </div>
-  )
+  );
 }
 
-export default CommunityPage
+export default CommunityPage;

@@ -5,7 +5,7 @@ module.exports ={
         apiEndpoint: process.env.API_URL ? `/${process.env.API_URL}` : "/api",
     },
     database:{
-        DB_URL: process.env.DB_URL || "mongodb+srv://jessecrowe:atlaspassword@cluster0.d69ksvd.mongodb.net/thatsanotherstory?retryWrites=true&w=majority",
+        DB_URL: process.env.DB_URL || "mongodb+srv://jaimenickels:jaimenickels@cluster0.unnvhti.mongodb.net/thatsanotherstory?retryWrites=true&w=majority",
         
         name: process.env.MONGODB_NAME || "That's Another Story",
 

@@ -21,7 +21,7 @@ const useAuth = () => {
   };
 
   const handleSignIn = async (username, password) => {
-   return signIn(username, password).then((response) =>
+    return signIn(username, password).then((response) =>
     console.log(response))
   }
     
