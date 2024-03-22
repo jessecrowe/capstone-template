@@ -21,7 +21,9 @@ const useAuth = () => {
   };
 
   const handleSignIn = async (username, password) => {
-   return signIn(username, password).then((response) =>
+    dispatch({type: SIGNIN})
+    
+    return signIn(username, password).then((response) =>
     console.log(response))
   }
     
