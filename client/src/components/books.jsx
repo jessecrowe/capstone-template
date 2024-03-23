@@ -16,8 +16,8 @@ const Books = () => {
     return (
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             {books && books.map((book) => (
-                <Grid item xs={2} md={4} key={book._id}>
-                    <item>
+                <Grid item xs={2} md={4} key={book._id} >
+                    <item className='displayBook'>
                         <img src={book.image_url}/>
                         <p>{book.title}</p>
                     </item>
